@@ -20,7 +20,7 @@
   const copy = {
     zh: {
       title: "Gavin · 开发者 / 技术研究者",
-      description: "Gavin 的个人技术档案：独立开发、应用机器学习、嵌入式系统与实证研究。",
+      description: "Gavin：开发者与技术研究者，专注于独立开发、应用机器学习、嵌入式系统与实证研究。",
       skip: "跳转到主要内容",
       sidebar: "个人站点导航",
       nav: "主要导航",
@@ -32,7 +32,7 @@
     },
     en: {
       title: "Gavin · Developer / Technical Researcher",
-      description: "Gavin's technical archive: independent development, applied machine learning, embedded systems, and empirical research.",
+      description: "Gavin: a developer and technical researcher focused on independent development, applied machine learning, embedded systems, and empirical research.",
       skip: "Skip to main content",
       sidebar: "Site navigation",
       nav: "Primary navigation",
