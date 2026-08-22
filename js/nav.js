@@ -1,40 +1,84 @@
 export function setupNav() {
-  const toggle = document.querySelector("#navToggle");
-  const nav = document.querySelector("#siteNav");
+  const treeItems = document.querySelectorAll(".tree-item");
+  const tabs = document.querySelectorAll(".tab");
+  const sections = document.querySelectorAll(".editor-section");
+  const viewport = document.getElementById("editorViewport");
+  const fileTypeIndicator = document.getElementById("editorFileType");
+  const fileInfoIndicator = document.getElementById("editorFileInfo");
+  const validViews = new Set([...sections].map((section) => section.id.replace("sec-", "")));
 
-  toggle?.addEventListener("click", () => {
-    const open = nav?.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(Boolean(open)));
-  });
+  const fileMeta = {
+    readme: { type: "Markdown" },
+    about: { type: "Markdown" },
+    services: { type: "JavaScript" },
+    work: { type: "JSON" },
+    contact: { type: "CSS" },
+  };
 
-  nav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      toggle?.setAttribute("aria-expanded", "false");
+  function countVisibleLines(fileId) {
+    const section = document.getElementById(`sec-${fileId}`);
+    if (!section) return 0;
+
+    return section.innerText
+      .split("\n")
+      .map((line) => line.trim())
+      .filter(Boolean).length;
+  }
+
+  function switchView(fileId) {
+    if (!fileId || !validViews.has(fileId)) return;
+
+    treeItems.forEach((item) => {
+      const isActive = item.dataset.file === fileId;
+      item.classList.toggle("active", isActive);
+      if (isActive) {
+        item.setAttribute("aria-current", "page");
+      } else {
+        item.removeAttribute("aria-current");
+      }
     });
-  });
+
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.file === fileId;
+      tab.classList.toggle("active", isActive);
+      if (isActive) {
+        tab.setAttribute("aria-current", "page");
+      } else {
+        tab.removeAttribute("aria-current");
+      }
+    });
+
+    sections.forEach((sec) => {
+      const sectionId = `sec-${fileId}`;
+      sec.classList.toggle("active", sec.id === sectionId);
+    });
+
+    const meta = fileMeta[fileId];
+    if (meta) {
+      if (fileTypeIndicator) fileTypeIndicator.textContent = meta.type;
+      if (fileInfoIndicator) fileInfoIndicator.textContent = `${countVisibleLines(fileId)} lines`;
+    }
+
+    if (viewport) {
+      viewport.scrollTop = 0;
+    }
+  }
+
+  function syncFromHash(normalizeUrl = false) {
+    const rawHash = decodeURIComponent(window.location.hash.slice(1));
+    const fileId = validViews.has(rawHash) ? rawHash : "readme";
+
+    if (normalizeUrl && rawHash !== fileId) {
+      history.replaceState(null, "", `#${fileId}`);
+    }
+
+    switchView(fileId);
+  }
+
+  window.addEventListener("hashchange", () => syncFromHash());
+  syncFromHash(true);
 }
 
 export function setupReveal() {
-  const items = [...document.querySelectorAll(".reveal")];
-  if (!items.length) return;
-
-  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    items.forEach((item) => item.classList.add("is-visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries, currentObserver) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          currentObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.08 }
-  );
-
-  items.forEach((item) => observer.observe(item));
+  // Disabled scroll reveal in the locked adaptive workspace viewport.
 }

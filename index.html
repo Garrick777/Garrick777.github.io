@@ -1,155 +1,362 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#faf9f7">
-    <meta name="description" content="Gavin 提供 Python、统计软件与嵌入式编程辅导，并展示硬件、算法与实证方向的技术项目。">
-    <meta property="og:title" content="Gavin · 编程与技术辅导">
-    <meta property="og:description" content="Python、统计软件与嵌入式编程辅导，从入门到项目交付。">
+    <meta name="theme-color" content="#fbf7e9">
+    <meta name="description" content="Gavin 的个人技术档案：独立开发、应用机器学习、嵌入式系统与实证研究。">
+    <meta property="og:title" content="Gavin · Developer / Technical Researcher">
+    <meta property="og:description" content="一个记录项目、方法和技术实践的个人数字花园。">
     <meta property="og:type" content="website">
-    <title>Gavin · 编程与技术辅导</title>
+    <link rel="icon" href="data:,">
+    <title>Gavin · Developer / Technical Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
   </head>
   <body>
-    <header class="site-header">
-      <div class="site-header-inner">
-        <a class="brand" href="#top"><span>Gavin</span><span class="brand-dot">.</span></a>
+    <a class="skip-link" href="#main">跳转到主要内容</a>
 
-        <button class="nav-toggle" id="navToggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="打开导航">
-          <span></span><span></span><span></span>
-        </button>
+    <div class="site-shell">
+      <aside class="site-sidebar" aria-label="个人站点导航">
+        <div class="sidebar-inner">
+          <div class="sidebar-head">
+            <a class="site-logo" href="#home" aria-label="回到首页">
+              <span class="logo-glyph" aria-hidden="true"><span></span></span>
+              <span>gavin.dev</span>
+            </a>
+            <div class="sidebar-controls">
+              <span class="accent-dot" aria-hidden="true"></span>
+              <button class="icon-button" id="themeToggle" type="button" aria-label="切换深色模式" aria-pressed="false">
+                <span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
+                <span class="theme-icon theme-icon-moon" aria-hidden="true">◐</span>
+              </button>
+            </div>
+          </div>
 
-        <nav class="site-nav" id="siteNav" aria-label="主导航">
-          <a href="#about"><span data-zh="关于" data-en="About">关于</span></a>
-          <a href="#services"><span data-zh="辅导服务" data-en="Tutoring">辅导服务</span></a>
-          <a href="#work"><span data-zh="技术项目" data-en="Projects">技术项目</span></a>
-          <a href="#contact"><span data-zh="联系" data-en="Contact">联系</span></a>
-        </nav>
+          <div class="sidebar-intro">
+            <p>
+              <span data-zh="我是 " data-en="I'm ">我是 </span><a href="#about">Gavin</a><span data-zh="，一名开发者与技术研究者。这里是我的数字花园：项目、方法和持续整理的笔记。" data-en=", a developer and technical researcher. This is my digital garden of projects, methods, and notes in progress.">，一名开发者与技术研究者。这里是我的数字花园：项目、方法和持续整理的笔记。</span>
+            </p>
+          </div>
 
-        <div class="header-actions">
-          <button class="language-toggle" id="languageToggle" type="button" aria-pressed="false" aria-label="切换到 English">
-            <span class="language-active">中</span><span class="language-divider">/</span><span class="language-other">EN</span>
-          </button>
-          <a class="btn btn-primary" href="#contact"><span data-zh="联系我" data-en="Contact">联系我</span></a>
+          <nav class="sidebar-nav" aria-label="主要导航">
+            <a href="#notes" data-section-link>
+              <span class="nav-icon nav-icon-notes" aria-hidden="true"></span>
+              <span data-zh="最新记录" data-en="Latest">最新记录</span>
+            </a>
+            <a href="#shelves" data-section-link>
+              <span class="nav-icon nav-icon-shelves" aria-hidden="true"></span>
+              <span data-zh="主题书架" data-en="Shelves">主题书架</span>
+            </a>
+            <a href="#series" data-section-link>
+              <span class="nav-icon nav-icon-series" aria-hidden="true"></span>
+              <span data-zh="实践系列" data-en="Series">实践系列</span>
+            </a>
+            <a href="#projects" data-section-link>
+              <span class="nav-icon nav-icon-projects" aria-hidden="true"></span>
+              <span data-zh="项目索引" data-en="Projects">项目索引</span>
+            </a>
+            <a href="#about" data-section-link>
+              <span class="nav-icon nav-icon-about" aria-hidden="true"></span>
+              <span data-zh="关于我" data-en="About me">关于我</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-bottom">
+            <div class="sidebar-socials" aria-label="外部链接">
+              <a href="mailto:qwqhhc1120@gmail.com" aria-label="Email">✉</a>
+              <a href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="GitHub">⌘</a>
+              <a href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="GitHub profile">◉</a>
+              <a href="#notes" aria-label="RSS-style notes feed">◔</a>
+            </div>
+            <div class="sidebar-links">
+              <a href="#experience" data-zh="经历" data-en="Experience">经历</a>
+              <span aria-hidden="true">|</span>
+              <a href="#skills" data-zh="技能" data-en="Skills">技能</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://github.com/Garrick777" target="_blank" rel="noreferrer" data-zh="源码" data-en="Source">源码</a>
+            </div>
+            <button class="language-toggle" id="languageToggle" type="button" aria-pressed="false" aria-label="切换到 English">
+              <span class="language-active">中</span><span class="language-divider">/</span><span class="language-other">EN</span>
+            </button>
+          </div>
         </div>
+      </aside>
+
+      <div class="main-content">
+        <main class="main-column" id="main">
+          <header class="profile-hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-copy">
+              <h1 id="hero-title" data-zh="嗨，我是 Gavin！" data-en="Hey, I'm Gavin!">嗨，我是 Gavin！</h1>
+              <p class="hero-role" data-zh="开发者、技术研究者，也在把抽象方法做成可以运行的东西。" data-en="Developer, technical researcher, and builder of things that have to work in the real world.">开发者、技术研究者，也在把抽象方法做成可以运行的东西。</p>
+
+              <div class="hero-timeline" id="experience">
+                <h2 data-zh="一段简短的实践轨迹" data-en="A brief timeline">一段简短的实践轨迹</h2>
+                <div class="timeline-row">
+                  <time>2020—2022</time>
+                  <p><a href="#skills" data-zh="工程基础" data-en="Engineering foundations">工程基础</a><span data-zh="：从 Python、C++ 和数据分析开始，逐渐把兴趣扩展到设备与系统。" data-en=": Started with Python, C++, and data analysis, then moved toward devices and systems.">：从 Python、C++ 和数据分析开始，逐渐把兴趣扩展到设备与系统。</span></p>
+                </div>
+                <div class="timeline-row">
+                  <time>2022—2024</time>
+                  <p><a href="#projects" data-zh="研究实践" data-en="Research practice">研究实践</a><span data-zh="：围绕面板数据、因果推断和机器学习完成数据处理、建模与稳健性检验。" data-en=": Worked across panel data, causal inference, and machine learning, from data preparation to robustness checks.">：围绕面板数据、因果推断和机器学习完成数据处理、建模与稳健性检验。</span></p>
+                </div>
+                <div class="timeline-row">
+                  <time>2024—现在</time>
+                  <p><a href="#projects" data-zh="独立开发" data-en="Independent development">独立开发</a><span data-zh="：把智能硬件、语音系统、模型应用和后端服务组合成可运行的原型。" data-en=": Building working prototypes that combine smart hardware, voice systems, models, and backend services.">：把智能硬件、语音系统、模型应用和后端服务组合成可运行的原型。</span></p>
+                </div>
+                <div class="timeline-row">
+                  <time>现在</time>
+                  <p><a href="#about" data-zh="持续分享" data-en="Sharing and teaching">持续分享</a><span data-zh="：通过编程与统计辅导，练习把复杂问题讲清楚，让学习者保留对代码的所有权。" data-en=": Through programming and statistics tutoring, I practice making complexity clear while keeping ownership with the learner.">：通过编程与统计辅导，练习把复杂问题讲清楚，让学习者保留对代码的所有权。</span></p>
+                </div>
+              </div>
+
+              <p class="hero-also"><a href="#shelves" data-zh="也在做" data-en="Also">也在做</a><span data-zh="：整理技术笔记、拆解真实项目、研究如何让工具更容易被理解和复用。" data-en=": keeping technical notes, breaking down real projects, and studying how tools become easier to understand and reuse.">：整理技术笔记、拆解真实项目、研究如何让工具更容易被理解和复用。</span></p>
+            </div>
+
+            <div class="hero-visual-wrap">
+              <div class="hero-visual" role="img" aria-label="Gavin 的数据、AI 与设备技术图谱">
+                <div class="visual-orbit visual-orbit-one"></div>
+                <div class="visual-orbit visual-orbit-two"></div>
+                <div class="visual-disc">
+                  <span class="visual-disc-kicker">GAVIN</span>
+                  <strong>GV</strong>
+                  <span class="visual-disc-caption">BUILD / TEST / SHARE</span>
+                </div>
+                <div class="visual-device">
+                  <span class="device-screen"></span>
+                  <span class="device-bar device-bar-one"></span>
+                  <span class="device-bar device-bar-two"></span>
+                  <span class="device-label">EDGE</span>
+                </div>
+                <span class="visual-chip visual-chip-data">DATA</span>
+                <span class="visual-chip visual-chip-ai">AI</span>
+                <span class="visual-chip visual-chip-code">CODE</span>
+              </div>
+              <aside class="hero-bubble" data-zh="把一个问题拆开，做成可解释、可验证、可交付的结果。" data-en="Break a problem down, then make the result explainable, testable, and shippable.">把一个问题拆开，做成可解释、可验证、可交付的结果。</aside>
+            </div>
+          </header>
+
+          <section class="content-section section-index" id="notes" aria-labelledby="notes-title">
+            <header class="heading">
+              <div class="heading-row">
+                <h2 id="notes-title" data-zh="最新记录" data-en="Latest">最新记录</h2>
+                <a class="small-button" href="#projects" data-zh="全部项目" data-en="All projects">全部项目</a>
+              </div>
+              <p class="section-description" data-zh="从真实项目里留下的几个切面，先看问题，再看我是如何把它做出来的。" data-en="A few slices from real projects: start with the problem, then see how I worked toward a result.">从真实项目里留下的几个切面，先看问题，再看我是如何把它做出来的。</p>
+            </header>
+            <div class="note-list">
+              <a class="note-row" href="#projects" data-filter-link="hardware">
+                <span class="note-icon note-icon-device" aria-hidden="true">▦</span>
+                <span class="note-info"><strong data-zh="从实时语音到实体终端" data-en="From realtime voice to a physical device">从实时语音到实体终端</strong><time>2025</time></span>
+                <span class="note-tags"><span>hardware</span><span>LLM</span></span>
+              </a>
+              <a class="note-row" href="#projects" data-filter-link="algorithms">
+                <span class="note-icon note-icon-model" aria-hidden="true">∿</span>
+                <span class="note-info"><strong data-zh="把模型推到边缘设备" data-en="Taking a model to the edge">把模型推到边缘设备</strong><time>2024</time></span>
+                <span class="note-tags"><span>deployment</span><span>CV</span></span>
+              </a>
+              <a class="note-row" href="#projects" data-filter-link="research">
+                <span class="note-icon note-icon-research" aria-hidden="true">β</span>
+                <span class="note-info"><strong data-zh="DID 不是按钮：从问题到识别策略" data-en="DID is not a button: from question to design">DID 不是按钮：从问题到识别策略</strong><time>2023—2024</time></span>
+                <span class="note-tags"><span>Stata</span><span>causal</span></span>
+              </a>
+              <a class="note-row" href="#projects" data-filter-link="algorithms">
+                <span class="note-icon note-icon-code" aria-hidden="true">&lt;/&gt;</span>
+                <span class="note-info"><strong data-zh="项目级代码助手为什么需要上下文" data-en="Why a code assistant needs repository context">项目级代码助手为什么需要上下文</strong><time>2024</time></span>
+                <span class="note-tags"><span>RAG</span><span>tools</span></span>
+              </a>
+            </div>
+          </section>
+
+          <section class="content-section section-index" id="shelves" aria-labelledby="shelves-title">
+            <header class="heading">
+              <div class="heading-row">
+                <h2 id="shelves-title" data-zh="主题书架" data-en="Shelves">主题书架</h2>
+                <span class="heading-mark" aria-hidden="true">✦</span>
+              </div>
+              <p class="section-description" data-zh="按问题而不是按工具整理我做过的工作。" data-en="Paths through my work, organized around questions rather than tools.">按问题而不是按工具整理我做过的工作。</p>
+            </header>
+            <div class="shelf-grid">
+              <a class="shelf-card shelf-card-hardware" href="#projects" data-filter-link="hardware">
+                <div class="shelf-title-row"><strong data-zh="硬件与边缘" data-en="Hardware & edge">硬件与边缘</strong><span class="shelf-count">05</span></div>
+                <p data-zh="从传感器、固件和设备通信，到真正能在桌面上运行的原型。" data-en="Sensors, firmware, device communication, and prototypes that have to run on a desk.">从传感器、固件和设备通信，到真正能在桌面上运行的原型。</p>
+              </a>
+              <a class="shelf-card shelf-card-ai" href="#projects" data-filter-link="algorithms">
+                <div class="shelf-title-row"><strong data-zh="应用 AI" data-en="Applied AI">应用 AI</strong><span class="shelf-count">08</span></div>
+                <p data-zh="模型训练只是起点，我更关心评估、部署，以及它如何进入真实工作流。" data-en="Training is only the start; I care about evaluation, deployment, and useful workflows.">模型训练只是起点，我更关心评估、部署，以及它如何进入真实工作流。</p>
+              </a>
+              <a class="shelf-card shelf-card-research" href="#projects" data-filter-link="research">
+                <div class="shelf-title-row"><strong data-zh="实证研究" data-en="Empirical research">实证研究</strong><span class="shelf-count">05</span></div>
+                <p data-zh="把问题、数据、识别策略和稳健性检验放在同一条可复核的路径上。" data-en="Questions, data, identification, and robustness checks on one reproducible path.">把问题、数据、识别策略和稳健性检验放在同一条可复核的路径上。</p>
+              </a>
+              <a class="shelf-card shelf-card-method" href="#about">
+                <div class="shelf-title-row"><strong data-zh="解释与辅导" data-en="Teaching & methods">解释与辅导</strong><span class="shelf-count">07</span></div>
+                <p data-zh="不代写结果，帮助学习者拆分任务、定位错误，并真正理解自己的代码。" data-en="No ghostwriting: break down tasks, debug clearly, and help people understand their own code.">不代写结果，帮助学习者拆分任务、定位错误，并真正理解自己的代码。</p>
+              </a>
+            </div>
+          </section>
+
+          <section class="content-section section-index" id="series" aria-labelledby="series-title">
+            <header class="heading">
+              <div class="heading-row">
+                <h2 id="series-title" data-zh="实践系列" data-en="Series">实践系列</h2>
+              </div>
+              <p class="section-description" data-zh="有些工作适合拆成一条线，方便以后回来看清过程。" data-en="Some work is easier to revisit as a sequence, with the process left visible.">有些工作适合拆成一条线，方便以后回来看清过程。</p>
+            </header>
+            <div class="series-list">
+              <a class="series-row" href="#projects" data-filter-link="hardware">
+                <span class="series-thumb series-thumb-build" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="series-info"><strong data-zh="从原型到系统" data-en="From prototype to system">从原型到系统</strong><span data-zh="硬件、通信和服务如何组合成一个可运行的产品雏形。" data-en="How hardware, communication, and services become a working product shape.">硬件、通信和服务如何组合成一个可运行的产品雏形。</span></span>
+                <span class="series-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="series-row" href="#projects" data-filter-link="algorithms">
+                <span class="series-thumb series-thumb-model" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="series-info"><strong data-zh="模型与部署" data-en="Models and deployment">模型与部署</strong><span data-zh="从 notebook、API 到边缘推理，记录模型离开实验环境之后的细节。" data-en="From notebook to API to edge inference: the details after a model leaves the lab.">从 notebook、API 到边缘推理，记录模型离开实验环境之后的细节。</span></span>
+                <span class="series-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="series-row" href="#projects" data-filter-link="research">
+                <span class="series-thumb series-thumb-data" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="series-info"><strong data-zh="研究方法笔记" data-en="Research method notes">研究方法笔记</strong><span data-zh="识别策略不是模板：从研究问题出发，逐步搭建可信的反事实。" data-en="Identification is not a template: build a credible counterfactual from the question outward.">识别策略不是模板：从研究问题出发，逐步搭建可信的反事实。</span></span>
+                <span class="series-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="series-row" href="#about">
+                <span class="series-thumb series-thumb-share" aria-hidden="true"><i></i><i></i></span>
+                <span class="series-info"><strong data-zh="把复杂问题讲清楚" data-en="Making complexity clear">把复杂问题讲清楚</strong><span data-zh="辅导、代码审查和复盘，是我持续练习表达技术的方法。" data-en="Tutoring, code review, and retrospectives are how I keep practicing technical communication.">辅导、代码审查和复盘，是我持续练习表达技术的方法。</span></span>
+                <span class="series-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="content-section section-index project-section" id="projects" aria-labelledby="projects-title">
+            <header class="heading">
+              <div class="heading-row">
+                <h2 id="projects-title" data-zh="项目索引" data-en="Projects">项目索引</h2>
+                <span class="heading-mark" aria-hidden="true">⌘</span>
+              </div>
+              <p class="section-description" data-zh="公开展示我真正投入时间做过的项目。按方向筛选，先看全貌，再深入具体工作。" data-en="A public index of work I have actually spent time building. Filter by track, then go deeper.">公开展示我真正投入时间做过的项目。按方向筛选，先看全貌，再深入具体工作。</p>
+            </header>
+            <div class="project-toolbar">
+              <div class="filter-group" role="group" aria-label="按技术方向筛选项目">
+                <button class="filter-button is-active" type="button" data-project-filter="all" aria-pressed="true"><span data-zh="全部" data-en="All">全部</span></button>
+                <button class="filter-button" type="button" data-project-filter="hardware" aria-pressed="false"><span data-zh="硬件" data-en="Hardware">硬件</span></button>
+                <button class="filter-button" type="button" data-project-filter="algorithms" aria-pressed="false"><span data-zh="算法与 AI" data-en="Algorithms & AI">算法与 AI</span></button>
+                <button class="filter-button" type="button" data-project-filter="research" aria-pressed="false"><span data-zh="研究" data-en="Research">研究</span></button>
+              </div>
+              <span class="project-count" id="projectCount">9 个项目</span>
+            </div>
+            <div class="project-grid" id="projectGrid">
+              <article class="project-card project-card-featured" data-track="hardware">
+                <div class="project-card-top"><time>2025</time><span class="project-track track-hardware" data-zh="硬件 / AI" data-en="Hardware / AI">硬件 / AI</span></div>
+                <h3>VoiceCompanion</h3>
+                <p data-zh="桌面语音陪伴机器人，把低延迟语音、多轮对话、长期记忆和实体终端组合成一个可运行的原型。" data-en="A desktop voice companion combining low-latency speech, multi-turn dialogue, long-term memory, and a physical device.">桌面语音陪伴机器人，把低延迟语音、多轮对话、长期记忆和实体终端组合成一个可运行的原型。</p>
+                <div class="project-card-bottom"><div class="tag-row"><span>ESP32</span><span>Python</span><span>WebSocket</span></div><strong>480ms</strong></div>
+              </article>
+              <article class="project-card project-card-featured" data-track="algorithms">
+                <div class="project-card-top"><time>2024</time><span class="project-track track-algorithms" data-zh="深度学习" data-en="Deep learning">深度学习</span></div>
+                <h3 data-zh="多模态情感分析系统" data-en="Multimodal sentiment analysis">多模态情感分析系统</h3>
+                <p data-zh="将文本、音频和视频特征通过注意力机制融合，研究真实场景下不同模态对情感识别的贡献。" data-en="Fusing text, audio, and visual features with attention to study their contribution to sentiment recognition.">将文本、音频和视频特征通过注意力机制融合，研究真实场景下不同模态对情感识别的贡献。</p>
+                <div class="project-card-bottom"><div class="tag-row"><span>PyTorch</span><span>BERT</span><span>API</span></div><strong>F1 0.87</strong></div>
+              </article>
+              <article class="project-card project-card-featured" data-track="research">
+                <div class="project-card-top"><time>2023—2024</time><span class="project-track track-research" data-zh="因果推断" data-en="Causal inference">因果推断</span></div>
+                <h3 data-zh="数字技术采纳与企业生产率" data-en="Digital technology adoption & productivity">数字技术采纳与企业生产率</h3>
+                <p data-zh="使用企业面板数据和政策冲击构建 DID 识别策略，检验数字技术采纳对全要素生产率的因果影响。" data-en="Using firm-level panel data and a policy shock to estimate the causal effect of digital technology adoption on productivity.">使用企业面板数据和政策冲击构建 DID 识别策略，检验数字技术采纳对全要素生产率的因果影响。</p>
+                <div class="project-card-bottom"><div class="tag-row"><span>Stata</span><span>DID</span><span>Panel</span></div><strong>+12.3%</strong></div>
+              </article>
+              <article class="project-card" data-track="hardware">
+                <div class="project-card-top"><time>2025</time><span class="project-track track-hardware">IoT</span></div>
+                <h3 data-zh="智能家居网关" data-en="Smart home gateway">智能家居网关</h3>
+                <p data-zh="基于 ESP32、Zigbee 和 MQTT 的本地化网关，支持离线运行和设备统一管理。" data-en="A local-first ESP32, Zigbee, and MQTT gateway for offline operation and unified device management.">基于 ESP32、Zigbee 和 MQTT 的本地化网关，支持离线运行和设备统一管理。</p>
+                <div class="tag-row"><span>ESP32</span><span>MQTT</span><span>Zigbee</span></div>
+              </article>
+              <article class="project-card" data-track="hardware">
+                <div class="project-card-top"><time>2024</time><span class="project-track track-hardware">Robotics</span></div>
+                <h3 data-zh="基于 ROS 的小型移动机器人" data-en="ROS mobile robot">基于 ROS 的小型移动机器人</h3>
+                <p data-zh="集成树莓派、激光雷达和 SLAM，完成室内建图、自主导航与 Web 远程控制。" data-en="A Raspberry Pi, lidar, and SLAM platform for indoor mapping, navigation, and web-based remote control.">集成树莓派、激光雷达和 SLAM，完成室内建图、自主导航与 Web 远程控制。</p>
+                <div class="tag-row"><span>ROS</span><span>SLAM</span><span>Python</span></div>
+              </article>
+              <article class="project-card" data-track="algorithms">
+                <div class="project-card-top"><time>2024</time><span class="project-track track-algorithms">Deployment</span></div>
+                <h3 data-zh="图像目标检测与部署" data-en="Object detection & deployment">图像目标检测与部署</h3>
+                <p data-zh="从 YOLOv8 训练、数据增强到 ONNX、TensorRT 和 Jetson Nano 部署，平衡模型效果与推理速度。" data-en="From YOLOv8 training and augmentation to ONNX, TensorRT, and Jetson deployment.">从 YOLOv8 训练、数据增强到 ONNX、TensorRT 和 Jetson Nano 部署，平衡模型效果与推理速度。</p>
+                <div class="tag-row"><span>YOLOv8</span><span>ONNX</span><span>TensorRT</span></div>
+              </article>
+              <article class="project-card" data-track="algorithms">
+                <div class="project-card-top"><time>2024</time><span class="project-track track-algorithms">LLM</span></div>
+                <h3 data-zh="项目级代码生成助手" data-en="Project-aware code assistant">项目级代码生成助手</h3>
+                <p data-zh="使用代码检索、RAG 和工具调用，把代码库上下文带入生成、测试和文档工作流。" data-en="Bringing repository context into code generation, testing, and documentation with retrieval and tool calling.">使用代码检索、RAG 和工具调用，把代码库上下文带入生成、测试和文档工作流。</p>
+                <div class="tag-row"><span>RAG</span><span>FastAPI</span><span>LLM</span></div>
+              </article>
+              <article class="project-card" data-track="research">
+                <div class="project-card-top"><time>2024</time><span class="project-track track-research">Research</span></div>
+                <h3 data-zh="环境规制的门槛效应" data-en="Environmental regulation threshold effect">环境规制的门槛效应</h3>
+                <p data-zh="基于面板门槛模型检验环境规制与企业创新之间的非线性关系。" data-en="Estimating the nonlinear relationship between environmental regulation and firm innovation with panel threshold models.">基于面板门槛模型检验环境规制与企业创新之间的非线性关系。</p>
+                <div class="tag-row"><span>R</span><span>Threshold</span><span>Bootstrap</span></div>
+              </article>
+              <article class="project-card" data-track="research">
+                <div class="project-card-top"><time>2023</time><span class="project-track track-research">Policy</span></div>
+                <h3 data-zh="最低工资政策评估" data-en="Minimum wage policy evaluation">最低工资政策评估</h3>
+                <p data-zh="用合成控制法和安慰剂检验评估最低工资调整对就业率的影响。" data-en="Evaluating the effect of a minimum-wage adjustment on employment with synthetic control and placebo tests.">用合成控制法和安慰剂检验评估最低工资调整对就业率的影响。</p>
+                <div class="tag-row"><span>Stata</span><span>SCM</span><span>Event study</span></div>
+              </article>
+            </div>
+            <p class="empty-state" id="projectEmpty" hidden data-zh="这个方向暂时没有公开项目。" data-en="There are no public projects in this track yet.">这个方向暂时没有公开项目。</p>
+          </section>
+
+          <section class="content-section section-index about-section" id="about" aria-labelledby="about-title">
+            <header class="heading">
+              <div class="heading-row">
+                <h2 id="about-title" data-zh="关于我" data-en="About me">关于我</h2>
+                <span class="heading-mark" aria-hidden="true">✎</span>
+              </div>
+              <p class="section-description" data-zh="一份个人档案应该展示结果，也展示做事的边界、方法和背景。" data-en="A personal archive should show outcomes, but also the boundaries, methods, and context behind the work.">一份个人档案应该展示结果，也展示做事的边界、方法和背景。</p>
+            </header>
+            <div class="about-layout">
+              <div class="about-copy">
+                <p data-zh="本科毕业于华南理工大学。目前主要围绕 Python、统计软件、机器学习和嵌入式系统做独立项目，也持续整理面板数据和因果推断方面的实证经验。" data-en="I graduated from South China University of Technology. My independent work centers on Python, statistical software, machine learning, and embedded systems, alongside empirical work with panel data and causal inference.">本科毕业于华南理工大学。目前主要围绕 Python、统计软件、机器学习和嵌入式系统做独立项目，也持续整理面板数据和因果推断方面的实证经验。</p>
+                <p data-zh="我也为高中生、本科生和研究生提供编程与技术辅导。辅导不是这份档案的全部，而是我练习解释复杂问题、审查代码和帮助别人建立方法感的一部分。" data-en="I also tutor high school, undergraduate, and graduate students in programming and technical work. Tutoring is one way I practice explaining complexity, reviewing code, and helping people build sound methods.">我也为高中生、本科生和研究生提供编程与技术辅导。辅导不是这份档案的全部，而是我练习解释复杂问题、审查代码和帮助别人建立方法感的一部分。</p>
+                <a class="inline-link" href="mailto:qwqhhc1120@gmail.com" data-zh="聊聊一个项目 ↗" data-en="Talk about a project ↗">聊聊一个项目 ↗</a>
+              </div>
+              <div class="about-facts" id="skills">
+                <div class="fact-row"><span data-zh="教育背景" data-en="Education">教育背景</span><strong>South China University of Technology</strong></div>
+                <div class="fact-row"><span data-zh="工作方式" data-en="Practice">工作方式</span><strong data-zh="独立开发 · 研究 · 辅导" data-en="Independent work · Research · Tutoring">独立开发 · 研究 · 辅导</strong></div>
+                <div class="fact-row"><span data-zh="所在地区" data-en="Based in">所在地区</span><strong data-zh="中国 · 线上协作" data-en="China · Remote collaboration">中国 · 线上协作</strong></div>
+                <div class="fact-row fact-row-skills"><span data-zh="常用工具" data-en="Tools">常用工具</span><strong>Python · PyTorch · ESP32 · Stata · Git</strong></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="contact-band" id="contact" aria-labelledby="contact-title">
+            <div class="contact-inner">
+              <p class="contact-kicker">CONTACT</p>
+              <h2 id="contact-title" data-zh="想聊一个项目，或者交换一些方法？" data-en="Want to talk about a project or a method?">想聊一个项目，或者交换一些方法？</h2>
+              <a class="contact-email" href="mailto:qwqhhc1120@gmail.com">qwqhhc1120@gmail.com <span aria-hidden="true">↗</span></a>
+            </div>
+          </section>
+        </main>
+
+        <footer class="site-footer">
+          <div class="footer-socials" aria-label="社交链接">
+            <a href="mailto:qwqhhc1120@gmail.com" aria-label="Email">✉</a>
+            <a href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="GitHub">⌘</a>
+            <a href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="GitHub profile">◉</a>
+            <a href="#notes" aria-label="Notes">◔</a>
+          </div>
+          <nav class="footer-menu" aria-label="页脚导航">
+            <a href="#experience" data-zh="经历" data-en="Experience">经历</a><span aria-hidden="true">|</span>
+            <a href="#skills" data-zh="技能" data-en="Skills">技能</a><span aria-hidden="true">|</span>
+            <a href="https://github.com/Garrick777" target="_blank" rel="noreferrer" data-zh="源码" data-en="Source">源码</a>
+          </nav>
+          <p class="footer-note" data-zh="用项目、方法和持续整理的笔记构成。" data-en="Built from projects, methods, and notes in progress.">用项目、方法和持续整理的笔记构成。</p>
+        </footer>
       </div>
-    </header>
+    </div>
 
-    <main id="top">
-      <section class="hero">
-        <span class="hero-eyebrow" data-zh="编程与技术辅导" data-en="Programming & Technical Tutoring">编程与技术辅导</span>
-        <h1 data-zh="Python、统计软件与嵌入式编程辅导，从入门到项目交付。" data-en="Python, statistical software, and embedded programming tutoring—from first steps to shipped projects.">Python、统计软件与嵌入式编程辅导，从入门到项目交付。</h1>
-        <p class="hero-lede" data-zh="面向高中生、本科生与研究生，一对一或小班辅导编程作业、课程设计与毕业论文的技术部分。辅导之外，也独立完成硬件、算法与实证方向的技术项目，用真实项目经验支撑教学。" data-en="One-on-one or small-group tutoring for high school, undergraduate, and graduate students—covering programming assignments, coursework, and the technical parts of theses. Backed by independent projects across hardware, algorithms, and empirical research.">面向高中生、本科生与研究生，一对一或小班辅导编程作业、课程设计与毕业论文的技术部分。辅导之外，也独立完成硬件、算法与实证方向的技术项目，用真实项目经验支撑教学。</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#services"><span data-zh="查看辅导服务" data-en="View tutoring services">查看辅导服务</span></a>
-          <a class="btn btn-secondary" href="#work"><span data-zh="查看技术项目" data-en="View technical projects">查看技术项目</span></a>
-        </div>
-        <div class="hero-tracks">
-          <span class="hero-track-chip">Python / SQL / Stata / R</span>
-          <span class="hero-track-chip">硬件与嵌入式</span>
-          <span class="hero-track-chip">算法与 AI</span>
-          <span class="hero-track-chip">实证研究</span>
-        </div>
-      </section>
-
-      <section class="section" id="about">
-        <div class="section-header reveal">
-          <span class="section-kicker" data-zh="关于" data-en="About">关于</span>
-          <h2 data-zh="从技术项目里带出来的辅导经验。" data-en="Tutoring grounded in real technical work.">从技术项目里带出来的辅导经验。</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-copy reveal">
-            <p data-zh="华南理工大学本科毕业。目前主要提供编程与技术方向的辅导，服务对象以高中生、本科生和研究生为主，帮助他们完成课程作业、课程设计和毕业论文中的技术部分。" data-en="BSc from South China University of Technology. I currently focus on programming and technical tutoring for high school, undergraduate, and graduate students—helping them complete coursework, course projects, and the technical sections of theses.">华南理工大学本科毕业。目前主要提供编程与技术方向的辅导，服务对象以高中生、本科生和研究生为主，帮助他们完成课程作业、课程设计和毕业论文中的技术部分。</p>
-            <p data-zh="辅导之外，我也独立完成软硬件一体的智能硬件项目、机器学习与大模型应用，以及面板数据因果推断的实证研究。这些项目不是教学案例，而是真实做过、能讲清楚方法和结果的技术工作，也是辅导内容背后的经验来源。" data-en="Beyond tutoring, I independently build hardware-and-software AI products, machine learning and LLM applications, and causal-inference research on panel data. These are not teaching examples—they are real technical work I can walk through in method and result, and the experience behind what I teach.">辅导之外，我也独立完成软硬件一体的智能硬件项目、机器学习与大模型应用，以及面板数据因果推断的实证研究。这些项目不是教学案例，而是真实做过、能讲清楚方法和结果的技术工作，也是辅导内容背后的经验来源。</p>
-            <div class="skills-row">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">Stata</span>
-              <span class="skill-tag">R</span>
-              <span class="skill-tag">ESP32 / STM32</span>
-              <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">LLM 应用</span>
-            </div>
-          </div>
-          <div class="about-facts reveal reveal-delay-1">
-            <div class="about-fact">
-              <span class="about-fact-label" data-zh="教育背景" data-en="Education">教育背景</span>
-              <span class="about-fact-value">South China University of Technology</span>
-            </div>
-            <div class="about-fact">
-              <span class="about-fact-label" data-zh="辅导对象" data-en="Students">辅导对象</span>
-              <span class="about-fact-value" data-zh="高中生 · 本科生 · 研究生" data-en="High school · Undergrad · Graduate">高中生 · 本科生 · 研究生</span>
-            </div>
-            <div class="about-fact">
-              <span class="about-fact-label" data-zh="累计辅导" data-en="Students tutored">累计辅导</span>
-              <span class="about-fact-value" data-zh="约 50 人" data-en="~50 students">约 50 人</span>
-            </div>
-            <div class="about-fact">
-              <span class="about-fact-label" data-zh="邮箱" data-en="Email">邮箱</span>
-              <span class="about-fact-value"><a href="mailto:qwqhhc1120@gmail.com">qwqhhc1120@gmail.com</a></span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="services">
-        <div class="section-header reveal">
-          <span class="section-kicker" data-zh="辅导服务" data-en="Tutoring">辅导服务</span>
-          <h2 data-zh="从语法基础到课程作业，按需定制辅导内容。" data-en="From basic syntax to coursework, tailored to what you need.">从语法基础到课程作业，按需定制辅导内容。</h2>
-          <p data-zh="一对一或小班辅导，覆盖 Python、SQL、Stata、R、机器学习原理、数据结构算法和 AI 辅助编程，帮助学生完成课程作业、课程设计和毕业论文的技术部分。" data-en="One-on-one or small-group tutoring covering Python, SQL, Stata, R, machine learning fundamentals, data structures &amp; algorithms, and AI-assisted coding—helping students finish coursework, course projects, and thesis-related technical work.">一对一或小班辅导，覆盖 Python、SQL、Stata、R、机器学习原理、数据结构算法和 AI 辅助编程，帮助学生完成课程作业、课程设计和毕业论文的技术部分。</p>
-        </div>
-        <div class="service-grid" id="servicesGrid"></div>
-      </section>
-
-      <section class="section" id="work">
-        <div class="section-header reveal">
-          <span class="section-kicker" data-zh="技术项目" data-en="Technical Projects">技术项目</span>
-          <h2 data-zh="辅导之外，独立完成的技术项目。" data-en="Independent technical work beyond tutoring.">辅导之外，独立完成的技术项目。</h2>
-          <p data-zh="覆盖智能硬件、算法与 AI 应用、以及面板数据实证研究三个方向，每个项目按问题、方法、结果展开。" data-en="Spanning smart hardware, algorithms &amp; AI, and panel-data empirical research—each project unpacked by problem, method, and result.">覆盖智能硬件、算法与 AI 应用、以及面板数据实证研究三个方向，每个项目按问题、方法、结果展开。</p>
-        </div>
-        <div class="filter-row reveal" role="group" aria-label="按方向筛选项目">
-          <button class="filter-button is-active" type="button" data-filter="all"><span data-zh="全部" data-en="All">全部</span></button>
-          <button class="filter-button" type="button" data-filter="hardware"><span data-zh="硬件与智能终端" data-en="Hardware">硬件与智能终端</span></button>
-          <button class="filter-button" type="button" data-filter="algorithms"><span data-zh="算法与 AI" data-en="Algorithms & AI">算法与 AI</span></button>
-          <button class="filter-button" type="button" data-filter="research"><span data-zh="实证研究" data-en="Research">实证研究</span></button>
-        </div>
-        <div id="workGroups"></div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="section-header reveal">
-          <span class="section-kicker" data-zh="联系" data-en="Contact">联系</span>
-          <h2 data-zh="辅导咨询或项目合作，都可以直接发邮件。" data-en="Tutoring inquiries or project collaboration—email works best.">辅导咨询或项目合作，都可以直接发邮件。</h2>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card reveal">
-            <h3 data-zh="辅导咨询" data-en="Tutoring inquiries">辅导咨询</h3>
-            <p data-zh="说明想学的内容或需要解决的作业/论文问题、目前基础和期望的时间安排，通常 1-2 天内回复安排试听或首次沟通。" data-en="Tell me what you want to learn or which assignment/thesis problem you need help with, your current level, and your timeline. I usually reply within 1-2 days to arrange a first session.">说明想学的内容或需要解决的作业/论文问题、目前基础和期望的时间安排，通常 1-2 天内回复安排试听或首次沟通。</p>
-            <a class="contact-email" href="mailto:qwqhhc1120@gmail.com"><span data-zh="发送辅导咨询" data-en="Send a tutoring inquiry">发送辅导咨询</span><span aria-hidden="true">→</span></a>
-          </div>
-          <div class="contact-card reveal reveal-delay-1">
-            <h3 data-zh="项目合作" data-en="Project collaboration">项目合作</h3>
-            <p data-zh="如果是硬件、算法或实证方向的项目合作，说明项目背景、期望产出和时间安排即可，我会评估后回复。" data-en="For collaboration on hardware, algorithm, or research projects, describe the background, expected outcome, and timeline—I'll review and respond.">如果是硬件、算法或实证方向的项目合作，说明项目背景、期望产出和时间安排即可，我会评估后回复。</p>
-            <a class="contact-email" href="mailto:qwqhhc1120@gmail.com"><span data-zh="发送合作邮件" data-en="Send a collaboration email">发送合作邮件</span><span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <span>© 2026 Gavin</span>
-        <a href="#top" data-zh="回到顶部 ↑" data-en="Back to top ↑">回到顶部 ↑</a>
-      </div>
-    </footer>
-
-    <script type="module" src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

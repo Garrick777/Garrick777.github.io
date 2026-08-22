@@ -1,30 +1,29 @@
 # Gavin.github.io
 
-GitHub Pages personal site for Gavin: programming & technical tutoring (Python, SQL, Stata, R, AI-assisted coding), backed by independent projects across hardware, algorithms, and empirical research.
+Gavin 的个人技术档案与数字花园，展示独立开发、应用 AI、嵌入式系统、实证研究和技术辅导实践。
 
-## Local preview
+## Local Preview
 
-This is a dependency-free static site using native ES modules. From this directory, run:
+这是一个无构建依赖的静态 GitHub Pages 站点。启动本地预览：
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173`.
+然后打开 `http://127.0.0.1:4173/index.html#home`。
 
-## Publish with GitHub Pages
+## Publish
 
-For a user site, the public repository name must match the GitHub username exactly:
+仓库名必须与 GitHub 用户名匹配：`Garrick777.github.io`。将 `main` 分支推送到远程后，GitHub Pages 从仓库根目录发布：
 
-- GitHub username `Garrick777` -> `Garrick777.github.io`
+`https://garrick777.github.io/`
 
-The display name on the site can remain `Gavin` regardless of the account handle. Push the contents of this directory to the `main` branch; GitHub Pages serves the repository root directly (Source: Deploy from a branch).
+## Structure
 
-## Files
+- `index.html`：侧栏导航、个人时间线、Latest、Shelves、Series、Projects、About 和联系区。
+- `css/`：`tokens.css` 设计令牌，`base.css` 基础重置，`layout.css` 页面布局，`components.css` 组件样式。
+- `js/main.js`：中英文切换、主题持久化、项目筛选和目录状态。
+- `data/`：原始项目与辅导内容资料，供后续内容整理参考。
+- `docs/`：仅供维护者使用的设计与交接记录，不在网站中公开链接。
 
-- `index.html` — page markup (Hero / About / Services / Work / Contact).
-- `css/` — visual system split by concern: `tokens.css` (design tokens), `base.css` (resets), `layout.css` (page shell), `components.css` (cards, buttons, etc).
-- `js/` — ES modules: `language.js` (zh/en toggle), `nav.js` (mobile nav + scroll reveal), `render.js` (renders service/project cards from data), `filter.js` (project track filter), `main.js` (entry point).
-- `data/` — content as data: `services.js` (tutoring offerings), `projects.js` (technical projects by track). Edit these files to change project content without touching HTML.
-- `assets/` — local visual assets.
-- `docs/` — internal planning notes (not linked from the site).
+页面不依赖 npm、框架或构建工具；修改后直接用静态服务器验证即可。

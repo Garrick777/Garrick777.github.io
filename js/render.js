@@ -17,6 +17,12 @@ function buildToggleIcon(className) {
   return icon;
 }
 
+const blockClassMap = {
+  问题: "is-problem",
+  方法: "is-method",
+  结果: "is-result",
+};
+
 export function renderServices(container, services) {
   services.forEach((service) => {
     const details = el("details", `service-card${service.flagship ? " is-flagship" : ""}`);
@@ -40,8 +46,8 @@ export function renderServices(container, services) {
       ["结果", service.result],
     ];
     blocks.forEach(([label, text]) => {
-      const block = el("div", "service-block");
-      block.appendChild(el("div", "service-block-label", label));
+      const block = el("div", `service-block ${blockClassMap[label] || ""}`.trim());
+      block.appendChild(el("div", `service-block-label ${blockClassMap[label] || ""}`.trim(), label));
       block.appendChild(el("p", null, text));
       body.appendChild(block);
     });
@@ -74,8 +80,8 @@ export function renderProjectCard(project) {
     ["结果", project.result],
   ];
   blocks.forEach(([label, text]) => {
-    const block = el("div", "project-block");
-    block.appendChild(el("div", "project-block-label", label));
+    const block = el("div", `project-block ${blockClassMap[label] || ""}`.trim());
+    block.appendChild(el("div", `project-block-label ${blockClassMap[label] || ""}`.trim(), label));
     block.appendChild(el("p", null, text));
     body.appendChild(block);
   });
