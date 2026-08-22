@@ -3,169 +3,153 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0d1117">
-    <meta name="description" content="Gavin 的 GitHub Pages 个人主页：Python 与 AI、统计实证、嵌入式与智能硬件。">
-    <meta property="og:title" content="Gavin · Applied Computing">
-    <meta property="og:description" content="Python 与 AI、统计实证、嵌入式与智能硬件。">
+    <meta name="theme-color" content="#faf9f7">
+    <meta name="description" content="Gavin 提供 Python、统计软件与嵌入式编程辅导，并展示硬件、算法与实证方向的技术项目。">
+    <meta property="og:title" content="Gavin · 编程与技术辅导">
+    <meta property="og:description" content="Python、统计软件与嵌入式编程辅导，从入门到项目交付。">
     <meta property="og:type" content="website">
-    <title>Gavin · Applied Computing</title>
+    <title>Gavin · 编程与技术辅导</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
   </head>
   <body>
-    <header class="global-header">
-      <div class="global-header-inner">
-        <a class="github-wordmark" href="#overview" data-view-target="overview" aria-label="Gavin home">
-          <svg class="octocat-mark" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.64 0 8.13c0 3.59 2.29 6.63 5.47 7.7.4.08.55-.18.55-.39 0-.19-.01-.7-.01-1.37-2.23.5-2.7-1.1-2.7-1.1-.36-.94-.89-1.19-.89-1.19-.73-.51.06-.5.06-.5.81.06 1.24.85 1.24.85.72 1.25 1.89.89 2.35.68.07-.53.28-.89.51-1.1-1.78-.21-3.65-.91-3.65-4.02 0-.89.31-1.62.83-2.19-.08-.21-.36-1.04.08-2.16 0 0 .68-.22 2.2.84A7.42 7.42 0 0 1 8 3.9a7.5 7.5 0 0 1 2.01.28c1.53-1.06 2.21-.84 2.21-.84.44 1.12.16 1.95.08 2.16.52.57.83 1.3.83 2.19 0 3.12-1.87 3.81-3.66 4.01.29.26.54.75.54 1.51 0 1.09-.01 1.97-.01 2.24 0 .22.15.48.55.39A8.14 8.14 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"/></svg>
-          <span>Gavin<span class="wordmark-suffix"> · portfolio</span></span>
-        </a>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="#top"><span>Gavin</span><span class="brand-dot">.</span></a>
 
-        <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-controls="globalNav" aria-expanded="false" aria-label="Open navigation">
+        <button class="nav-toggle" id="navToggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="打开导航">
           <span></span><span></span><span></span>
         </button>
 
-        <nav class="global-nav" id="globalNav" aria-label="Global navigation">
-          <a href="#overview" data-view-target="overview"><span data-zh="概览" data-en="Overview">概览</span></a>
-          <a href="#projects" data-view-target="projects"><span data-zh="项目" data-en="Projects">项目</span></a>
-          <a href="#activity" data-view-target="activity"><span data-zh="路线" data-en="Activity">路线</span></a>
-          <a href="#contact" data-view-target="contact"><span data-zh="联系" data-en="Contact">联系</span></a>
+        <nav class="site-nav" id="siteNav" aria-label="主导航">
+          <a href="#about"><span data-zh="关于" data-en="About">关于</span></a>
+          <a href="#services"><span data-zh="辅导服务" data-en="Tutoring">辅导服务</span></a>
+          <a href="#work"><span data-zh="技术项目" data-en="Projects">技术项目</span></a>
+          <a href="#contact"><span data-zh="联系" data-en="Contact">联系</span></a>
         </nav>
 
-        <div class="global-actions">
+        <div class="header-actions">
           <button class="language-toggle" id="languageToggle" type="button" aria-pressed="false" aria-label="切换到 English">
             <span class="language-active">中</span><span class="language-divider">/</span><span class="language-other">EN</span>
           </button>
-          <a class="icon-link" href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="Open GitHub profile">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.58 22.02c.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.02 1.74 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.53-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.05-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.13 1.16a10.85 10.85 0 0 1 5.7 0c2.17-1.47 3.13-1.16 3.13-1.16.62 1.57.23 2.73.11 3.02.73.8 1.17 1.81 1.17 3.05 0 4.37-2.67 5.33-5.21 5.61.41.35.78 1.04.78 2.1v3.12c0 .3.21.65.79.54A11.3 11.3 0 0 0 12 .7Z"/></svg>
-          </a>
+          <a class="btn btn-primary" href="#contact"><span data-zh="联系我" data-en="Contact">联系我</span></a>
         </div>
       </div>
     </header>
 
-    <div class="site-shell">
-      <aside class="profile-sidebar">
-        <div class="avatar-wrap">
-          <div class="avatar" aria-label="Gavin avatar">G</div>
-          <span class="availability-dot" title="Available for focused projects"></span>
+    <main id="top">
+      <section class="hero">
+        <span class="hero-eyebrow" data-zh="编程与技术辅导" data-en="Programming & Technical Tutoring">编程与技术辅导</span>
+        <h1 data-zh="Python、统计软件与嵌入式编程辅导，从入门到项目交付。" data-en="Python, statistical software, and embedded programming tutoring—from first steps to shipped projects.">Python、统计软件与嵌入式编程辅导，从入门到项目交付。</h1>
+        <p class="hero-lede" data-zh="面向高中生、本科生与研究生，一对一或小班辅导编程作业、课程设计与毕业论文的技术部分。辅导之外，也独立完成硬件、算法与实证方向的技术项目，用真实项目经验支撑教学。" data-en="One-on-one or small-group tutoring for high school, undergraduate, and graduate students—covering programming assignments, coursework, and the technical parts of theses. Backed by independent projects across hardware, algorithms, and empirical research.">面向高中生、本科生与研究生，一对一或小班辅导编程作业、课程设计与毕业论文的技术部分。辅导之外，也独立完成硬件、算法与实证方向的技术项目，用真实项目经验支撑教学。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services"><span data-zh="查看辅导服务" data-en="View tutoring services">查看辅导服务</span></a>
+          <a class="btn btn-secondary" href="#work"><span data-zh="查看技术项目" data-en="View technical projects">查看技术项目</span></a>
         </div>
-        <h1>Gavin</h1>
-        <p class="profile-handle">Applied computing · SCUT</p>
-        <p class="profile-bio" data-zh="把代码、证据与设备，做成真正能运行的成果。" data-en="Turning code, evidence, and devices into outcomes that run。">把代码、证据与设备，做成真正能运行的成果。</p>
-        <a class="profile-cta" href="mailto:qwqhhc1120@gmail.com"><span data-zh="联系 Gavin" data-en="Contact Gavin">联系 Gavin</span></a>
-        <div class="profile-details">
-          <p><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a5 5 0 0 0-5 5c0 3.75 5 11 5 11s5-7.25 5-11a5 5 0 0 0-5-5Zm0 7.25A2.25 2.25 0 1 1 8 2.75a2.25 2.25 0 0 1 0 4.5Z"/></svg><span>South China University of Technology</span></p>
-          <p><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h11A1.5 1.5 0 0 1 15 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9Zm1.5-.25a.25.25 0 0 0-.15.05L8 7.46l5.65-4.16a.25.25 0 0 0-.15-.05h-11ZM14 4.54 8.44 8.63a.75.75 0 0 1-.88 0L2 4.54v7.96c0 .14.11.25.25.25h11.5a.25.25 0 0 0 .25-.25V4.54Z"/></svg><a href="mailto:qwqhhc1120@gmail.com">qwqhhc1120@gmail.com</a></p>
-          <p><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1.68 6h2.1c.16 1.36.61 2.58 1.24 3.53A6.53 6.53 0 0 1 1.68 6Zm0-1a6.53 6.53 0 0 1 3.34-3.53A8.28 8.28 0 0 0 3.78 5h-2.1ZM8 1c.83.94 1.48 2.33 1.72 4H6.28C6.52 3.33 7.17 1.94 8 1Zm1.82 5c-.08 1.15-.38 2.17-.82 2.94C8.56 8.17 8.26 7.15 8.18 6h1.64ZM8 15c-.83-.94-1.48-2.33-1.72-4h3.44C9.48 12.67 8.83 14.06 8 15Zm2.16-5H5.84c-.15-.93-.24-1.94-.24-3s.09-2.07.24-3h4.32c.15.93.24 2.07.24 3s-.09 2.07-.24 3Zm.02-.47c.63-.95 1.08-2.17 1.24-3.53h2.1a6.53 6.53 0 0 1-3.34 3.53Zm1.24-4.53a8.28 8.28 0 0 0-1.24-3.53A6.53 6.53 0 0 1 13.32 5h-2.1Z"/></svg><span>Personal site · static</span></p>
+        <div class="hero-tracks">
+          <span class="hero-track-chip">Python / SQL / Stata / R</span>
+          <span class="hero-track-chip">硬件与嵌入式</span>
+          <span class="hero-track-chip">算法与 AI</span>
+          <span class="hero-track-chip">实证研究</span>
         </div>
-        <div class="profile-skills" aria-label="Core skills">
-          <span>Python</span><span>R</span><span>Stata</span><span>ESP32</span><span>LLM</span>
-        </div>
-      </aside>
+      </section>
 
-      <main class="profile-main">
-        <div class="repo-heading">
-          <div class="repo-title-line">
-            <svg class="repo-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 1h10.5A1.75 1.75 0 0 1 15 2.75v10.5A1.75 1.75 0 0 1 13.25 15H2.75A1.75 1.75 0 0 1 1 13.25V2.75A1.75 1.75 0 0 1 2.75 1Zm0 1a.75.75 0 0 0-.75.75v10.5c0 .41.34.75.75.75h10.5c.41 0 .75-.34.75-.75V2.75a.75.75 0 0 0-.75-.75H2.75ZM4 4.25A1.25 1.25 0 1 1 6.5 4.25 1.25 0 0 1 4 4.25ZM4.25 8h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1 0-1.5Zm0 3h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1 0-1.5Z"/></svg>
-            <a href="#overview" data-view-target="overview">Gavin</a><span class="slash">/</span><strong>portfolio</strong><span class="repo-visibility">Public</span>
+      <section class="section" id="about">
+        <div class="section-header reveal">
+          <span class="section-kicker" data-zh="关于" data-en="About">关于</span>
+          <h2 data-zh="从技术项目里带出来的辅导经验。" data-en="Tutoring grounded in real technical work.">从技术项目里带出来的辅导经验。</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p data-zh="华南理工大学本科毕业。目前主要提供编程与技术方向的辅导，服务对象以高中生、本科生和研究生为主，帮助他们完成课程作业、课程设计和毕业论文中的技术部分。" data-en="BSc from South China University of Technology. I currently focus on programming and technical tutoring for high school, undergraduate, and graduate students—helping them complete coursework, course projects, and the technical sections of theses.">华南理工大学本科毕业。目前主要提供编程与技术方向的辅导，服务对象以高中生、本科生和研究生为主，帮助他们完成课程作业、课程设计和毕业论文中的技术部分。</p>
+            <p data-zh="辅导之外，我也独立完成软硬件一体的智能硬件项目、机器学习与大模型应用，以及面板数据因果推断的实证研究。这些项目不是教学案例，而是真实做过、能讲清楚方法和结果的技术工作，也是辅导内容背后的经验来源。" data-en="Beyond tutoring, I independently build hardware-and-software AI products, machine learning and LLM applications, and causal-inference research on panel data. These are not teaching examples—they are real technical work I can walk through in method and result, and the experience behind what I teach.">辅导之外，我也独立完成软硬件一体的智能硬件项目、机器学习与大模型应用，以及面板数据因果推断的实证研究。这些项目不是教学案例，而是真实做过、能讲清楚方法和结果的技术工作，也是辅导内容背后的经验来源。</p>
+            <div class="skills-row">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Stata</span>
+              <span class="skill-tag">R</span>
+              <span class="skill-tag">ESP32 / STM32</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">LLM 应用</span>
+            </div>
           </div>
-          <div class="repo-actions">
-            <a class="repo-action" href="https://github.com/Garrick777" target="_blank" rel="noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.67 4.5h-1.3c-.15-.69-.4-1.29-.7-1.8a6.53 6.53 0 0 1 2 1.8ZM8 1c.47.55.91 1.41 1.2 2.5H6.8C7.09 2.41 7.53 1.55 8 1ZM5.16 2.7c-.3.51-.55 1.11-.7 1.8h-1.3a6.53 6.53 0 0 1 2-1.8ZM2 8c0-.51.06-1.01.18-1.5h2.1c-.05.48-.08.98-.08 1.5s.03 1.02.08 1.5h-2.1A6.87 6.87 0 0 1 2 8Zm1.16 2.5h1.3c.15.69.4 1.29.7 1.8a6.53 6.53 0 0 1-2-1.8ZM8 15c-.47-.55-.91-1.41-1.2-2.5h2.4C8.91 13.59 8.47 14.45 8 15Zm1.45-3.5h-2.9A14.7 14.7 0 0 1 6.18 8c0-1.3.13-2.5.37-3.5h2.9c.24 1 .37 2.2.37 3.5s-.13 2.5-.37 3.5Zm1.79.8c.3-.51.55-1.11.7-1.8h1.3a6.53 6.53 0 0 1-2 1.8ZM13.82 9.5h-2.1c.05-.48.08-.98.08-1.5s-.03-1.02-.08-1.5h2.1c.12.49.18.99.18 1.5s-.06 1.01-.18 1.5Z"/></svg><span data-zh="打开 GitHub" data-en="Open GitHub">打开 GitHub</span></a>
-            <a class="repo-action repo-action-primary" href="mailto:qwqhhc1120@gmail.com"><span data-zh="联系" data-en="Contact">联系</span></a>
+          <div class="about-facts reveal reveal-delay-1">
+            <div class="about-fact">
+              <span class="about-fact-label" data-zh="教育背景" data-en="Education">教育背景</span>
+              <span class="about-fact-value">South China University of Technology</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-label" data-zh="辅导对象" data-en="Students">辅导对象</span>
+              <span class="about-fact-value" data-zh="高中生 · 本科生 · 研究生" data-en="High school · Undergrad · Graduate">高中生 · 本科生 · 研究生</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-label" data-zh="累计辅导" data-en="Students tutored">累计辅导</span>
+              <span class="about-fact-value" data-zh="约 50 人" data-en="~50 students">约 50 人</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-label" data-zh="邮箱" data-en="Email">邮箱</span>
+              <span class="about-fact-value"><a href="mailto:qwqhhc1120@gmail.com">qwqhhc1120@gmail.com</a></span>
+            </div>
           </div>
         </div>
+      </section>
 
-        <nav class="profile-tabs" aria-label="Profile sections" role="tablist">
-          <a class="profile-tab is-active" href="#overview" data-view-target="overview" role="tab" aria-selected="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2.75C1 1.78 1.78 1 2.75 1h10.5C14.22 1 15 1.78 15 2.75v10.5c0 .97-.78 1.75-1.75 1.75H2.75C1.78 15 1 14.22 1 13.25V2.75ZM2.75 2a.75.75 0 0 0-.75.75v10.5c0 .41.34.75.75.75h10.5c.41 0 .75-.34.75-.75V2.75a.75.75 0 0 0-.75-.75H2.75ZM4 5h8v1.5H4V5Zm0 3h6v1.5H4V8Zm0 3h4v1.5H4V11Z"/></svg><span data-zh="概览" data-en="Overview">概览</span></a>
-          <a class="profile-tab" href="#projects" data-view-target="projects" role="tab" aria-selected="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.75 2h4.4c.46 0 .9.18 1.22.5l.63.63c.14.14.33.22.53.22h3.72A1.75 1.75 0 0 1 14 5.1v7.15A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25V3.75C2 2.78 1.78 2 1.75 2Zm.25 1.75v8.5c0 .41.34.75.75.75h8.5c.41 0 .75-.34.75-.75V5.1a.75.75 0 0 0-.75-.75H8.53c-.46 0-.9-.18-1.22-.5l-.63-.63a.75.75 0 0 0-.53-.22H2.75a.75.75 0 0 0-.75.75Z"/></svg><span data-zh="项目" data-en="Projects">项目</span><span class="tab-count">6</span></a>
-          <a class="profile-tab" href="#activity" data-view-target="activity" role="tab" aria-selected="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM2 8a6 6 0 0 1 11.92-1H9.5a1.5 1.5 0 0 0-3 0H2.08C2.03 7.66 2 7.82 2 8Zm.08 1H6.5a1.5 1.5 0 0 0 3 0h4.42A6 6 0 0 1 2.08 9Zm9.84-3H9.5a1.5 1.5 0 0 0-3 0H2.08a6 6 0 0 1 9.84 0Z"/></svg><span data-zh="活动" data-en="Activity">活动</span></a>
-          <a class="profile-tab" href="#contact" data-view-target="contact" role="tab" aria-selected="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h11A1.5 1.5 0 0 1 15 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9Zm1.5-.25a.25.25 0 0 0-.15.05L8 7.46l5.65-4.16a.25.25 0 0 0-.15-.05h-11ZM14 4.54 8.44 8.63a.75.75 0 0 1-.88 0L2 4.54v7.96c0 .14.11.25.25.25h11.5a.25.25 0 0 0 .25-.25V4.54Z"/></svg><span data-zh="联系" data-en="Contact">联系</span></a>
-        </nav>
-
-        <div class="views" id="views">
-          <section class="view is-active" data-view="overview" id="overview" role="tabpanel">
-            <article class="readme-panel reveal">
-              <div class="readme-toolbar"><span class="file-dot"></span><strong>README.md</strong><span class="readme-state">main</span></div>
-              <div class="readme-content">
-                <div class="readme-kicker"># <span data-zh="Gavin / 应用计算" data-en="Gavin / Applied Computing">Gavin / 应用计算</span></div>
-                <h2 data-zh="代码、证据与设备。" data-en="Code, evidence, and devices。">代码、证据与设备。</h2>
-                <p data-zh="华南理工大学本科毕业，专注 Python 与 AI、统计实证研究，以及嵌入式和智能硬件。把问题拆成可以理解、实现和验证的步骤。" data-en="BSc from South China University of Technology. I work across Python & AI, empirical research, embedded systems, and intelligent hardware—turning complex problems into steps that can be understood, built, and verified。">华南理工大学本科毕业，专注 Python 与 AI、统计实证研究，以及嵌入式和智能硬件。把问题拆成可以理解、实现和验证的步骤。</p>
-                <div class="readme-links"><a href="#projects" data-view-target="projects"><span data-zh="查看精选项目" data-en="View selected projects">查看精选项目</span><span aria-hidden="true">→</span></a><a href="#activity" data-view-target="activity"><span data-zh="查看工作路线" data-en="Explore the working tracks">查看工作路线</span><span aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-
-            <div class="section-title-row reveal"><div><span class="section-kicker">PINNED</span><h2 data-zh="精选仓库" data-en="Pinned repositories">精选仓库</h2></div><a class="subtle-link" href="#projects" data-view-target="projects"><span data-zh="查看全部" data-en="View all">查看全部</span><span aria-hidden="true">→</span></a></div>
-            <div class="repo-grid pinned-grid">
-              <article class="repo-card reveal" data-track="python">
-                <div class="repo-card-head"><span class="repo-folder">◈</span><a href="https://github.com/Garrick777" target="_blank" rel="noreferrer">retail-signal</a><span class="repo-label">Public</span></div>
-                <p data-zh="面向 UCI Online Retail 的交易清洗与经营分析管线：识别取消订单，复核异常值，输出月度、国家、商品和客户画像。" data-en="A transaction-to-insight pipeline for UCI Online Retail: cancellation handling, outlier review, and monthly, market, product, and customer views。">面向 UCI Online Retail 的交易清洗与经营分析管线：识别取消订单，复核异常值，输出月度、国家、商品和客户画像。</p>
-                <div class="repo-card-foot"><span class="language"><i class="dot dot-python"></i>Python</span><span>Data pipeline</span><span>↗</span></div>
-              </article>
-              <article class="repo-card reveal reveal-delay-1" data-track="research">
-                <div class="repo-card-head"><span class="repo-folder">◈</span><a href="https://github.com/Garrick777" target="_blank" rel="noreferrer">evidence-pipeline</a><span class="repo-label">Public</span></div>
-                <p data-zh="从研究问题和变量定义开始，串联数据清洗、模型估计、稳健性检验与可复现结果表。" data-en="A reproducible empirical workflow connecting research questions, variable design, estimation, robustness checks, and publication-ready tables。">从研究问题和变量定义开始，串联数据清洗、模型估计、稳健性检验与可复现结果表。</p>
-                <div class="repo-card-foot"><span class="language"><i class="dot dot-r"></i>R / Stata</span><span>Reproducible</span><span>↗</span></div>
-              </article>
-              <article class="repo-card reveal reveal-delay-2" data-track="embedded">
-                <div class="repo-card-head"><span class="repo-folder">◈</span><a href="https://github.com/Garrick777" target="_blank" rel="noreferrer">edgesense</a><span class="repo-label">Public</span></div>
-                <p data-zh="将传感器采集、边缘特征提取、量化推理和设备告警连成一条可运行的 TinyML 链路。" data-en="A runnable TinyML link from sensor acquisition and edge features to quantized inference and device-side alerts。">将传感器采集、边缘特征提取、量化推理和设备告警连成一条可运行的 TinyML 链路。</p>
-                <div class="repo-card-foot"><span class="language"><i class="dot dot-c"></i>C / C++</span><span>ESP32 · MQTT</span><span>↗</span></div>
-              </article>
-              <article class="repo-card reveal reveal-delay-3" data-track="python">
-                <div class="repo-card-head"><span class="repo-folder">◈</span><a href="https://github.com/Garrick777" target="_blank" rel="noreferrer">knowledge-workbench</a><span class="repo-label">Public</span></div>
-                <p data-zh="从文档摄取、切分、向量检索到带引用回答，把评估和可追溯性纳入 LLM 应用交付。" data-en="An LLM workbench covering ingestion, chunking, vector retrieval, citation-aware answers, and evaluation。">从文档摄取、切分、向量检索到带引用回答，把评估和可追溯性纳入 LLM 应用交付。</p>
-                <div class="repo-card-foot"><span class="language"><i class="dot dot-ts"></i>TypeScript</span><span>RAG · Eval</span><span>↗</span></div>
-              </article>
-            </div>
-
-            <div class="overview-grid">
-              <article class="activity-card reveal">
-                <div class="section-title-row compact"><div><span class="section-kicker">CONTRIBUTIONS</span><h2 data-zh="持续构建" data-en="Building in public">持续构建</h2></div><span class="activity-year">2026</span></div>
-                <div class="contribution-wrap" aria-label="Contribution activity overview"><div class="month-labels"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div><div class="contribution-grid" aria-hidden="true"></div><div class="legend"><span>Less</span><i class="level-0"></i><i class="level-1"></i><i class="level-2"></i><i class="level-3"></i><span>More</span></div></div>
-                <p class="activity-note" data-zh="用仓库、笔记和可运行的交付物，记录从问题到结果的路径。" data-en="Repositories, notes, and runnable deliverables keep the path from question to result visible。">用仓库、笔记和可运行的交付物，记录从问题到结果的路径。</p>
-              </article>
-              <article class="focus-card reveal reveal-delay-1"><span class="section-kicker">CURRENT FOCUS</span><h2 data-zh="让学习、研究和工程彼此连通。" data-en="Connect learning, research, and engineering。">让学习、研究和工程彼此连通。</h2><p data-zh="Python 负责分析与建模，统计方法负责证据，嵌入式系统负责把模型带到真实设备。" data-en="Python handles analysis and modeling, statistical methods make evidence trustworthy, and embedded systems carry models into real devices。">Python 负责分析与建模，统计方法负责证据，嵌入式系统负责把模型带到真实设备。</p><a href="#contact" data-view-target="contact"><span data-zh="开始交流" data-en="Start a conversation">开始交流</span><span aria-hidden="true">↗</span></a></article>
-            </div>
-          </section>
-
-          <section class="view" data-view="projects" id="projects" role="tabpanel" hidden>
-            <div class="view-intro reveal"><span class="section-kicker">PROJECTS</span><h2 data-zh="用可验证的成果说明技术。" data-en="Let verifiable work speak for the technology。">用可验证的成果说明技术。</h2><p data-zh="每个项目都从一个具体问题出发，留下方法、实现和可复用的交付物。" data-en="Each project starts with a concrete problem and leaves behind a method, an implementation, and a reusable deliverable。">每个项目都从一个具体问题出发，留下方法、实现和可复用的交付物。</p></div>
-            <div class="filter-row" role="group" aria-label="Filter projects"><button class="filter-button is-active" type="button" data-filter="all"><span data-zh="全部" data-en="All">全部</span></button><button class="filter-button" type="button" data-filter="python"><span data-zh="Python / AI" data-en="Python / AI">Python / AI</span></button><button class="filter-button" type="button" data-filter="research"><span data-zh="统计实证" data-en="Research">统计实证</span></button><button class="filter-button" type="button" data-filter="embedded"><span data-zh="嵌入式" data-en="Embedded">嵌入式</span></button></div>
-            <div class="project-list">
-              <article class="project-row reveal" data-track="python"><div class="project-index">01</div><div class="project-row-main"><div class="project-row-title"><h3>Retail Signal</h3><span class="project-status">DATA / PYTHON</span></div><p data-zh="对 541,909 条交易记录进行清洗、取消订单识别、销售额构造和异常候选复核，输出按月、国家、商品与客户的经营分析结果。" data-en="Cleans 541,909 transaction records, handles cancellations, constructs sales metrics, reviews outlier candidates, and publishes monthly, market, product, and customer analyses。">对 541,909 条交易记录进行清洗、取消订单识别、销售额构造和异常候选复核，输出按月、国家、商品与客户的经营分析结果。</p><div class="tag-row"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Jupyter</span></div></div><a class="row-link" href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="Open Retail Signal repository">↗</a></article>
-              <article class="project-row reveal" data-track="research"><div class="project-index">02</div><div class="project-row-main"><div class="project-row-title"><h3>Evidence Pipeline</h3><span class="project-status">EVIDENCE / R</span></div><p data-zh="将研究问题、变量操作化、描述统计、回归估计、稳健性检验与结果表整合为可复现的实证工作流。" data-en="Turns a research question into operational variables, descriptive statistics, regression estimates, robustness checks, and reproducible result tables。">将研究问题、变量操作化、描述统计、回归估计、稳健性检验与结果表整合为可复现的实证工作流。</p><div class="tag-row"><span>R</span><span>Stata</span><span>Panel data</span><span>Robustness</span></div></div><a class="row-link" href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="Open Evidence Pipeline repository">↗</a></article>
-              <article class="project-row reveal" data-track="embedded"><div class="project-index">03</div><div class="project-row-main"><div class="project-row-title"><h3>EdgeSense</h3><span class="project-status">DEVICE / TINYML</span></div><p data-zh="围绕环境传感器搭建采集、特征提取、量化推理与告警链路，支持设备端响应和 MQTT 上报。" data-en="Builds an environmental-sensor pipeline with feature extraction, quantized inference, device-side responses, and MQTT reporting。">围绕环境传感器搭建采集、特征提取、量化推理与告警链路，支持设备端响应和 MQTT 上报。</p><div class="tag-row"><span>C / C++</span><span>ESP32</span><span>TinyML</span><span>MQTT</span></div></div><a class="row-link" href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="Open EdgeSense repository">↗</a></article>
-              <article class="project-row reveal" data-track="python"><div class="project-index">04</div><div class="project-row-main"><div class="project-row-title"><h3>Knowledge Workbench</h3><span class="project-status">LLM / RETRIEVAL</span></div><p data-zh="构建文档摄取、切分、嵌入、检索、引用回答和离线评估流程，强调答案可追溯与失败样本复盘。" data-en="Builds ingestion, chunking, embeddings, retrieval, citation-aware answers, and offline evaluation with explicit failure review。">构建文档摄取、切分、嵌入、检索、引用回答和离线评估流程，强调答案可追溯与失败样本复盘。</p><div class="tag-row"><span>Python</span><span>FastAPI</span><span>RAG</span><span>Evaluation</span></div></div><a class="row-link" href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="Open Knowledge Workbench repository">↗</a></article>
-              <article class="project-row reveal" data-track="python"><div class="project-index">05</div><div class="project-row-main"><div class="project-row-title"><h3>VibeBuild Protocol</h3><span class="project-status">AI / DELIVERY</span></div><p data-zh="以需求规格和验收标准为起点，让 AI 辅助生成模块、测试与部署配置，同时保留人工审查和提交历史。" data-en="A spec-first workflow where AI assists with modules, tests, and deployment configuration while human review and history stay explicit。">以需求规格和验收标准为起点，让 AI 辅助生成模块、测试与部署配置，同时保留人工审查和提交历史。</p><div class="tag-row"><span>LLM</span><span>TypeScript</span><span>GitHub Actions</span></div></div><a class="row-link" href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="Open VibeBuild Protocol repository">↗</a></article>
-              <article class="project-row reveal" data-track="embedded"><div class="project-index">06</div><div class="project-row-main"><div class="project-row-title"><h3>Device Link</h3><span class="project-status">FIRMWARE / SYSTEM</span></div><p data-zh="以 GPIO、UART、I²C、SPI 和网络调试为基础，建立从硬件状态到上层服务的稳定数据通路。" data-en="Establishes a dependable path from hardware state to higher-level services across GPIO, UART, I²C, SPI, and network debugging。">以 GPIO、UART、I²C、SPI 和网络调试为基础，建立从硬件状态到上层服务的稳定数据通路。</p><div class="tag-row"><span>STM32</span><span>ESP32</span><span>UART</span><span>MQTT</span></div></div><a class="row-link" href="https://github.com/Garrick777" target="_blank" rel="noreferrer" aria-label="Open Device Link repository">↗</a></article>
-            </div>
-          </section>
-
-          <section class="view" data-view="activity" id="activity" role="tabpanel" hidden>
-            <div class="view-intro reveal"><span class="section-kicker">ACTIVITY</span><h2 data-zh="三条路线，一套工作方法。" data-en="Three tracks, one working method。">三条路线，一套工作方法。</h2><p data-zh="把学习、研究和工程放在同一条可复现的路径上：定义问题，选择方法，完成实现，验证结果。" data-en="Learning, research, and engineering follow one reproducible path: frame the problem, choose the method, build the solution, verify the result。">把学习、研究和工程放在同一条可复现的路径上：定义问题，选择方法，完成实现，验证结果。</p></div>
-            <div class="track-board">
-              <article class="track-line track-line-python reveal"><span class="track-line-index">01</span><div><span class="track-line-code">CODE / MODEL</span><h3 data-zh="Python 与 AI" data-en="Python & AI">Python 与 AI</h3><p data-zh="从基础语法、数据处理与可视化，到机器学习、深度学习、大模型和 Vibe Coding。" data-en="From Python foundations, data work and visualization to machine learning, deep learning, LLMs, and Vibe Coding。">从基础语法、数据处理与可视化，到机器学习、深度学习、大模型和 Vibe Coding。</p><div class="track-chips"><span>Python</span><span>PyTorch</span><span>LLM</span><span>Vibe Coding</span></div></div><strong class="track-accent">→</strong></article>
-              <article class="track-line track-line-research reveal reveal-delay-1"><span class="track-line-index">02</span><div><span class="track-line-code">DATA / EVIDENCE</span><h3 data-zh="统计实证研究" data-en="Empirical Research">统计实证研究</h3><p data-zh="以研究问题为起点，完成变量定义、数据清洗、模型选择、稳健性检验和结果解释。" data-en="Start with a research question, then define variables, clean data, select models, test robustness, and interpret results。">以研究问题为起点，完成变量定义、数据清洗、模型选择、稳健性检验和结果解释。</p><div class="track-chips"><span>SPSS</span><span>Stata</span><span>R</span><span>Quantitative methods</span></div></div><strong class="track-accent">→</strong></article>
-              <article class="track-line track-line-embedded reveal reveal-delay-2"><span class="track-line-index">03</span><div><span class="track-line-code">SYSTEM / DEVICE</span><h3 data-zh="嵌入式与智能硬件" data-en="Embedded & Edge AI">嵌入式与智能硬件</h3><p data-zh="从 MCU、传感器和通信协议，到边缘推理、设备联网与 AI 硬件原型。" data-en="From MCUs, sensors, and protocols to edge inference, connected devices, and AI hardware prototypes。">从 MCU、传感器和通信协议，到边缘推理、设备联网与 AI 硬件原型。</p><div class="track-chips"><span>C / C++</span><span>ESP32</span><span>STM32</span><span>TinyML</span></div></div><strong class="track-accent">→</strong></article>
-            </div>
-            <div class="method-grid">
-              <article class="method-card reveal"><span>01</span><h3 data-zh="定义" data-en="Frame">定义</h3><p data-zh="明确目标、输入、限制和成功标准。" data-en="Clarify the goal, inputs, constraints, and definition of done。">明确目标、输入、限制和成功标准。</p></article>
-              <article class="method-card reveal reveal-delay-1"><span>02</span><h3 data-zh="建模" data-en="Model">建模</h3><p data-zh="选择合适的表示、指标、模型或系统结构。" data-en="Choose the right representation, metric, model, or system architecture。">选择合适的表示、指标、模型或系统结构。</p></article>
-              <article class="method-card reveal reveal-delay-2"><span>03</span><h3 data-zh="实现" data-en="Build">实现</h3><p data-zh="把想法落成代码、分析流程、固件或可交互原型。" data-en="Turn the idea into code, an analysis pipeline, firmware, or an interactive prototype。">把想法落成代码、分析流程、固件或可交互原型。</p></article>
-              <article class="method-card reveal reveal-delay-3"><span>04</span><h3 data-zh="验证" data-en="Verify">验证</h3><p data-zh="用测试、可视化、稳健性或实物运行证明它真的有效。" data-en="Use tests, visualizations, robustness checks, or a running device to prove it works。">用测试、可视化、稳健性或实物运行证明它真的有效。</p></article>
-            </div>
-          </section>
-
-          <section class="view" data-view="contact" id="contact" role="tabpanel" hidden>
-            <div class="contact-view reveal"><div class="contact-copy"><span class="section-kicker">CONTACT</span><h2 data-zh="把下一个问题，变成可验证的项目。" data-en="Turn the next question into a verifiable project。">把下一个问题，变成可验证的项目。</h2><p data-zh="无论是 Python 与 AI 的学习路线、统计实证的研究设计，还是嵌入式设备的联调，都可以从当前基础和目标开始。" data-en="Whether it is a Python & AI learning route, an empirical research design, or an embedded device integration, start with your current state and the outcome you need。">无论是 Python 与 AI 的学习路线、统计实证的研究设计，还是嵌入式设备的联调，都可以从当前基础和目标开始。</p></div><div class="contact-card"><div class="contact-card-label">EMAIL</div><a class="contact-email" href="mailto:qwqhhc1120@gmail.com">qwqhhc1120@gmail.com</a><p data-zh="邮件中可以简单说明：方向、目前进度、希望完成的成果和时间安排。" data-en="A short note with your direction, current progress, target deliverable, and timeline is enough to start。">邮件中可以简单说明：方向、目前进度、希望完成的成果和时间安排。</p><a class="profile-cta" href="mailto:qwqhhc1120@gmail.com"><span data-zh="发送邮件" data-en="Send an email">发送邮件</span><span aria-hidden="true">↗</span></a></div></div>
-            <div class="contact-links"><a href="https://github.com/Garrick777" target="_blank" rel="noreferrer"><span class="contact-link-label">GITHUB</span><strong data-zh="查看代码与仓库" data-en="Browse code and repositories">查看代码与仓库</strong><span aria-hidden="true">↗</span></a><a href="#projects" data-view-target="projects"><span class="contact-link-label">PROJECTS</span><strong data-zh="了解精选项目" data-en="Explore selected projects">了解精选项目</strong><span aria-hidden="true">↗</span></a></div>
-          </section>
+      <section class="section" id="services">
+        <div class="section-header reveal">
+          <span class="section-kicker" data-zh="辅导服务" data-en="Tutoring">辅导服务</span>
+          <h2 data-zh="从语法基础到课程作业，按需定制辅导内容。" data-en="From basic syntax to coursework, tailored to what you need.">从语法基础到课程作业，按需定制辅导内容。</h2>
+          <p data-zh="一对一或小班辅导，覆盖 Python、SQL、Stata、R、机器学习原理、数据结构算法和 AI 辅助编程，帮助学生完成课程作业、课程设计和毕业论文的技术部分。" data-en="One-on-one or small-group tutoring covering Python, SQL, Stata, R, machine learning fundamentals, data structures &amp; algorithms, and AI-assisted coding—helping students finish coursework, course projects, and thesis-related technical work.">一对一或小班辅导，覆盖 Python、SQL、Stata、R、机器学习原理、数据结构算法和 AI 辅助编程，帮助学生完成课程作业、课程设计和毕业论文的技术部分。</p>
         </div>
-      </main>
-    </div>
+        <div class="service-grid" id="servicesGrid"></div>
+      </section>
 
-    <footer class="site-footer"><div class="footer-inner"><span>© 2026 Gavin</span><span data-zh="代码 · 证据 · 设备" data-en="Code · Evidence · Devices">代码 · 证据 · 设备</span><a href="#overview" data-view-target="overview" data-zh="回到概览 ↑" data-en="Back to overview ↑">回到概览 ↑</a></div></footer>
-    <script src="script.js"></script>
+      <section class="section" id="work">
+        <div class="section-header reveal">
+          <span class="section-kicker" data-zh="技术项目" data-en="Technical Projects">技术项目</span>
+          <h2 data-zh="辅导之外，独立完成的技术项目。" data-en="Independent technical work beyond tutoring.">辅导之外，独立完成的技术项目。</h2>
+          <p data-zh="覆盖智能硬件、算法与 AI 应用、以及面板数据实证研究三个方向，每个项目按问题、方法、结果展开。" data-en="Spanning smart hardware, algorithms &amp; AI, and panel-data empirical research—each project unpacked by problem, method, and result.">覆盖智能硬件、算法与 AI 应用、以及面板数据实证研究三个方向，每个项目按问题、方法、结果展开。</p>
+        </div>
+        <div class="filter-row reveal" role="group" aria-label="按方向筛选项目">
+          <button class="filter-button is-active" type="button" data-filter="all"><span data-zh="全部" data-en="All">全部</span></button>
+          <button class="filter-button" type="button" data-filter="hardware"><span data-zh="硬件与智能终端" data-en="Hardware">硬件与智能终端</span></button>
+          <button class="filter-button" type="button" data-filter="algorithms"><span data-zh="算法与 AI" data-en="Algorithms & AI">算法与 AI</span></button>
+          <button class="filter-button" type="button" data-filter="research"><span data-zh="实证研究" data-en="Research">实证研究</span></button>
+        </div>
+        <div id="workGroups"></div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-header reveal">
+          <span class="section-kicker" data-zh="联系" data-en="Contact">联系</span>
+          <h2 data-zh="辅导咨询或项目合作，都可以直接发邮件。" data-en="Tutoring inquiries or project collaboration—email works best.">辅导咨询或项目合作，都可以直接发邮件。</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3 data-zh="辅导咨询" data-en="Tutoring inquiries">辅导咨询</h3>
+            <p data-zh="说明想学的内容或需要解决的作业/论文问题、目前基础和期望的时间安排，通常 1-2 天内回复安排试听或首次沟通。" data-en="Tell me what you want to learn or which assignment/thesis problem you need help with, your current level, and your timeline. I usually reply within 1-2 days to arrange a first session.">说明想学的内容或需要解决的作业/论文问题、目前基础和期望的时间安排，通常 1-2 天内回复安排试听或首次沟通。</p>
+            <a class="contact-email" href="mailto:qwqhhc1120@gmail.com"><span data-zh="发送辅导咨询" data-en="Send a tutoring inquiry">发送辅导咨询</span><span aria-hidden="true">→</span></a>
+          </div>
+          <div class="contact-card reveal reveal-delay-1">
+            <h3 data-zh="项目合作" data-en="Project collaboration">项目合作</h3>
+            <p data-zh="如果是硬件、算法或实证方向的项目合作，说明项目背景、期望产出和时间安排即可，我会评估后回复。" data-en="For collaboration on hardware, algorithm, or research projects, describe the background, expected outcome, and timeline—I'll review and respond.">如果是硬件、算法或实证方向的项目合作，说明项目背景、期望产出和时间安排即可，我会评估后回复。</p>
+            <a class="contact-email" href="mailto:qwqhhc1120@gmail.com"><span data-zh="发送合作邮件" data-en="Send a collaboration email">发送合作邮件</span><span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© 2026 Gavin</span>
+        <a href="#top" data-zh="回到顶部 ↑" data-en="Back to top ↑">回到顶部 ↑</a>
+      </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
